@@ -13,6 +13,7 @@ int EnterIntegerNumber(string comment)
         x = EnterIntegerNumber(comment);
     }
     x = x > 0 ? x: EnterIntegerNumber(comment);
+    x = x < 11 ? x: EnterIntegerNumber(comment);
     return x;
 }
 void printArray (string[] array)
@@ -23,7 +24,7 @@ void printArray (string[] array)
     }
     Console.WriteLine();
 }
-int firstArraySize = EnterIntegerNumber("How much strings in array we need?");
+int firstArraySize = EnterIntegerNumber("How much strings in array we need? Lets take number less then 10");
 
 string[] firstArray = new string [firstArraySize];
 
@@ -58,3 +59,28 @@ foreach (var item in firstArray)
 
 Console.WriteLine("...and we got an array: ");
 printArray (secondArray);
+
+// as a method
+// string [] MadeArray(string [] array)
+// {
+//     int newArraySize = 0;
+
+//     foreach (var item in array)
+//     {
+//         if (item.Length <= 3) newArraySize++;
+//     }
+
+//     string [] newArray = new string [newArraySize];
+
+//     int newArrayIndex = 0;
+
+//     foreach (var item in array)
+//     {
+//         if (item.Length <= 3) 
+//         {
+//             newArray[newArrayIndex] = item;
+//             newArrayIndex++;
+//         }
+//     }
+//     return newArray;
+// }
